@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testing NodeJS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Login Page</h1>
+        <input type="username" name="name" id="name" />
+        <input type="password" name="password" id="name" />
+        <button type="submit" id="submit">Submit</button>
+      </div>
+    </div>
+    <script>
+      const getDataProduct = async () => {
+        let productData = await fetch("http://localhost:3000/login", {
+          method: "post",
+          body: JSON.stringify({
+            username: "admin",
+            password: "admin",
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      };
+      const submit = document.getElementById("submit");
+      submit.addEventListener("click", () => {
+        getDataProduct();
+        console.log("askjdfasjkfbks");
+      });
+    </script>
+  </body>
+</html>
